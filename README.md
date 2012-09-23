@@ -82,22 +82,9 @@ In your .vimrc, add ensime, vim-async-beans, ensime-common and envim plugins as 
       ...
 
       let g:vim_addon_manager = {}
-      let g:vim_addon_manager.plugin_sources = {}
-      let g:vim_addon_manager.plugin_sources['ensime'] = {"type": "git", "url": "git://github.com/aemoncannon/ensime.git", "branch" : "scala-2.9"}
-      let g:vim_addon_manager.plugin_sources['envim'] = {"type": "git", "url": "git://github.com/jlc/envim.git", "branch" : "master"}
-      let g:vim_addon_manager.plugin_sources['ensime-common'] = {"type": "git", "url": "git://github.com/jlc/ensime-common.git", "branch" : "master"}
-      let g:vim_addon_manager.plugin_sources['vim-async-beans'] = {"type": "git", "url": "git://github.com/jlc/vim-async-beans.git", "branch" : "master"}
-      let g:vim_addon_manager.plugin_sources['vim-addon-async'] = {"type": "git", "url": "git://github.com/jlc/vim-addon-async.git", "branch" : "master"}
 
-      let plugins = [
-        \ 'ensime',
-        \ 'vim-addon-async',
-        \ 'vim-async-beans',
-        \ 'ensime-common',
-        \ 'envim'
-        \ ]
 
-      call vam#ActivateAddons(plugins,{'auto_install' : 0})
+      call vam#ActivateAddons(['github:megaannum/envim'], {'auto_insall': 0})
 
       ...
 
@@ -107,6 +94,7 @@ In your .vimrc, add ensime, vim-async-beans, ensime-common and envim plugins as 
 
 Optionaly for Scala syntax:
 
+      let g:vim_addon_manager.plugin_sources = {}
       let g:vim_addon_manager.plugin_sources['vim-scala-behaghel'] = {'type': 'git', 'url': 'git://github.com/behaghel/vim-scala.git'}
 
       let plugins = [
